@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  quarkus-service:
+    build:
+      context: .
+      dockerfile: microservice_a/src/main/docker/Dockerfile.jvm
+    image: quarkus/microservice_a-jvm
+    ports:
+      - "8080:8080" 
+    build:
+      context: .
+      dockerfile: microservice_b/src/main/docker/Dockerfile.jvm
+    image: quarkus/microservice_b-jvm
+    ports:
+      - "8090:8090"  
+    
