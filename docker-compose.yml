@@ -14,6 +14,8 @@ services:
       context: ./microservice_b
       dockerfile: src/main/docker/Dockerfile.jvm
     image: quarkus/microservice_b-jvm
+    environment:
+      SERVICE_A: http://quarkus-service-a:8080
     ports:
       - "8090:8090"  
     depends_on:
